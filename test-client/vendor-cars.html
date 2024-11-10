@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Inicio Head -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css tema -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- css tema -->
+
+    <title>Luxcars</title>
+  </head>
+
+  <body>
+    <header class="header position-relative">
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <a class="navbar-brand" href="../index.html" style="margin-left: 30px"
+          >Luxcars</a
+        >
+        <!-- #region IF DASHBOARD -->
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+        </ul>
+        <!-- #endregion -->
+        <div class="ms-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link text-danger"
+                href="logout.html"
+                title="Cerrar sesión"
+              >
+                <i class="bi bi-box-arrow-right" style="font-size: 1.5rem"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container my-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Mis Autos</h1>
+        <button id="addCarBtn" class="btn btn-success">
+          <i class="bi bi-plus-circle"></i> Nuevo
+        </button>
+      </div>
+
+      <div id="vendorCarsResponse" class="row"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link px-2 text-muted">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">Vender</a>
+          </li>
+          <li class="nav-item">
+            <a href="list.html" class="nav-link px-2 text-muted">Ver Luxcars</a>
+          </li>
+        </ul>
+        <p class="text-center text-muted">©2024 Luxcars</p>
+      </footer>
+    </div>
+    <!-- Fin Footer -->
+
+    <script src="vendor-cars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

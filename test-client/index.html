@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Marketplace API Client</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      input,
+      button {
+        margin: 5px 0;
+      }
+      .response {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Car Marketplace API Client</h1>
+    <!-- Registration Form -->
+    <div>
+      <h2>Register</h2>
+      <form id="registrationForm">
+        <label for="registerEmail">Email:</label>
+        <input type="email" id="registerEmail" required />
+
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" required />
+
+        <button type="submit">Register</button>
+      </form>
+      <div id="registrationResponse"></div>
+    </div>
+
+    <!-- Login Form -->
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Password"
+        required
+      />
+      <button type="submit">Login</button>
+    </form>
+    <div id="loginResponse" class="response"></div>
+
+    <button id="logoutBtn">Logout</button>
+
+    <!-- View All Cars -->
+    <h2>View All Cars</h2>
+    <button id="viewCarsBtn">View Cars</button>
+    <div id="carsResponse" class="response"></div>
+
+    <!-- Create Car (Only for Vendors) -->
+    <h2>Create Car (Vendor)</h2>
+    <form id="createCarForm">
+      <input type="text" id="carMake" placeholder="Make" required />
+      <input type="text" id="carModel" placeholder="Model" required />
+      <input type="number" id="carYear" placeholder="Year" required />
+      <input type="number" id="carPrice" placeholder="Price" required />
+      <textarea id="carDescription" placeholder="Description"></textarea>
+      <input type="file" id="images" name="images" accept="image/*" multiple />
+
+      <button type="submit">Create Car</button>
+    </form>
+    <div id="createCarResponse" class="response"></div>
+
+    <!-- View Specific Car -->
+    <h2>View Specific Car</h2>
+    <input type="text" id="carId" placeholder="Car ID" />
+    <button id="viewCarBtn">View Car</button>
+    <div id="carResponse" class="response"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
