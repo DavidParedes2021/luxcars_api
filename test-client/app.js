@@ -179,6 +179,26 @@ document.getElementById('createCarForm').addEventListener('submit', async (e) =>
     displayResponse('createCarResponse', data);
   });
   
+// Create new Offer
+
+document.getElementById('createOffer').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData();
+  formData.append('email', document.getElementById('offerEmail').value);
+  formData.append('message', document.getElementById('offerMessage').value);
+
+  const response = await fetch(`${API_URL}/offers`, {
+    method: 'POST',
+    headers: {
+      headers: { 'Content-Type': 'application/json' },
+    },
+    body: formData
+  });
+
+  const data = await response.json();
+    displayResponse('offerResponse', data);
+});
 
 /*
 // Create a car (Only for Vendors)

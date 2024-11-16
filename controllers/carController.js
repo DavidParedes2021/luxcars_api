@@ -1,4 +1,5 @@
 const Car = require('../models/Car');
+const Offer = require ('../models/Offer');
 
 /*
 
@@ -39,7 +40,22 @@ const getCarDetails = async (req, res) => {
 };
 
 const createOffer = async (req, res) => {
-  // Implement offer creation logic here
+  
+  try{
+    // Implement offer creation logic here
+    const { email, message } = req.body;
+    
+    const newOffer = new Offer({
+      email,
+      message,
+      car: req.car.carId, // Car Id
+    });
+
+    await newOffer.save();
+    res.status(201).json({ message: 'Offer posted successfully', offer: newOffer });
+  }catch (err) {
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
 const addCar = async (req, res) => {
