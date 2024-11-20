@@ -11,7 +11,7 @@ const path = require('path');
 const app = express();
 
 // Enable CORS for all routes
-// app.use(cors());
+app.use(cors());
 
 // // List of allowed origins
 // const allowedOrigins = ['http://127.0.0.1:5501', 'http://127.0.0.1:5500', 'http://dapp.enlacenet.net:8002'];
@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
 // Start server
-const PORT = process.env.PORT || 8002;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
