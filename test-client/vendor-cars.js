@@ -49,5 +49,40 @@ const fetchVendorCars = async () => {
   }
 };
 
+// create car form
+
+document.getElementById('createCarForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const token = localStorage.getItem('authToken');
+  if (!token) {
+    alert('You must be logged in as a vendor to create a car.');
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('make', document.getElementById('carMake').value);
+  formData.append('model', document.getElementById('carModel').value);
+  formData.append('year', document.getElementById('carYear').value);
+  formData.append('price', document.getElementById('carPrice').value);
+  formData.append('description', document.getElementById('carDescription').value);
+
+  const images = document.getElementById('images').files;
+  for (let i = 0; i < images.length; i++) {
+    formData.append('images', images[i]); // Add each image to the form data
+  }
+
+  const response = await fetch(`${API_URL}/cars/vendors/cars`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    },
+    body: formData
+  });
+
+  // const data = await response.json();
+// displayResponse('createCarResponse', data);
+});
+
 // Call function to load vendor's cars on page load
 window.onload = fetchVendorCars;

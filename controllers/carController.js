@@ -48,7 +48,7 @@ const createOffer = async (req, res) => {
     const newOffer = new Offer({
       email,
       message,
-      car: req.car.carId, // Car Id
+      car: req.car.carId // Car Id
     });
 
     await newOffer.save();

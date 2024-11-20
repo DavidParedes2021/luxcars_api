@@ -52,6 +52,20 @@
       <div id="vendorCarsResponse" class="row"></div>
     </div>
 
+    <!-- Create Car (Only for Vendors) -->
+    <h2>Create Car (Vendor)</h2>
+    <form id="createCarForm">
+      <input type="text" id="carMake" placeholder="Make" required />
+      <input type="text" id="carModel" placeholder="Model" required />
+      <input type="number" id="carYear" placeholder="Year" required />
+      <input type="number" id="carPrice" placeholder="Price" required />
+      <textarea id="carDescription" placeholder="Description"></textarea>
+      <input type="file" id="images" name="images" accept="image/*" multiple />
+
+      <button type="submit">Create Car</button>
+    </form>
+    <div id="createCarResponse" class="response"></div>
+
     <!-- Footer -->
     <div class="container">
       <footer class="py-3 my-4">

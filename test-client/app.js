@@ -183,10 +183,11 @@ document.getElementById('createCarForm').addEventListener('submit', async (e) =>
 
 document.getElementById('createOffer').addEventListener('submit', async (e) => {
   e.preventDefault();
-  
+
   const formData = new FormData();
   formData.append('email', document.getElementById('offerEmail').value);
   formData.append('message', document.getElementById('offerMessage').value);
+  // formData.append('car', document.getElementById('carOfferId').value);
 
   const response = await fetch(`${API_URL}/offers`, {
     method: 'POST',
@@ -196,8 +197,7 @@ document.getElementById('createOffer').addEventListener('submit', async (e) => {
     body: formData
   });
 
-  const data = await response.json();
-    displayResponse('offerResponse', data);
+  // const data = await response.json();
 });
 
 /*
