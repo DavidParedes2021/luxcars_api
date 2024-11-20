@@ -47,7 +47,8 @@ const createOffer = async (req, res) => {
     // Implement offer creation logic here
     const { email, message, car } = req.body;
     
-    console.log('estoy vivo' + email + message + car);
+    // console.log('estoy vivo' + email + message + car);
+    console.log(req.body);
 
     const newOffer = new Offer({
       email: email,
