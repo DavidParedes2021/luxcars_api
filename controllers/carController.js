@@ -41,14 +41,9 @@ const getCarDetails = async (req, res) => {
 
 const createOffer = async (req, res) => {
   
-  
-
-  // try{
+  try{
     // Implement offer creation logic here
     const { email, message, car } = req.body;
-    
-    // console.log('estoy vivo' + email + message + car);
-    console.log(JSON.stringify(req.body));
 
     const newOffer = new Offer({
       email: email,
@@ -58,9 +53,9 @@ const createOffer = async (req, res) => {
 
     await newOffer.save();
     res.status(201).json({ message: 'Offer posted successfully', offer: newOffer });
-  // }catch (err) {
-    // res.status(500).json({ message: 'Server error...' });
-  // }
+  }catch (err) {
+    res.status(500).json({ message: 'Server error...' });
+  }
 };
 
 const addCar = async (req, res) => {
