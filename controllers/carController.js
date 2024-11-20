@@ -41,12 +41,14 @@ const getCarDetails = async (req, res) => {
 
 const createOffer = async (req, res) => {
   
-  console.log('estoy vivo');
+  
 
   try{
     // Implement offer creation logic here
     const { email, message, car } = req.body;
     
+    console.log('estoy vivo' + email + message + car);
+
     const newOffer = new Offer({
       email,
       message,
