@@ -11,14 +11,14 @@ const path = require('path');
 const app = express();
 
 // Enable CORS for all routes
-app.use(cors());
+// app.use(cors());
 
-// List of allowed origins
-const allowedOrigins = ['http://127.0.0.1:5501', 'http://127.0.0.1:5500', 'http://dapp.enlacenet.net:8002'];
+// // List of allowed origins
+// const allowedOrigins = ['http://127.0.0.1:5501', 'http://127.0.0.1:5500', 'http://dapp.enlacenet.net:8002'];
 
-app.use(cors({
-  origin: allowedOrigins,  // Array of allowed origins
-}));
+// app.use(cors({
+//   origin: allowedOrigins,  // Array of allowed origins
+// }));
   
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
