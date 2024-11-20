@@ -14,7 +14,7 @@ const app = express();
 app.use(cors());
 
 // List of allowed origins
-const allowedOrigins = ['http://127.0.0.1:5501', 'http://127.0.0.1:5500'];
+const allowedOrigins = ['http://127.0.0.1:5501', 'http://127.0.0.1:5500', 'http://dapp.enlacenet.net:8002'];
 
 app.use(cors({
   origin: allowedOrigins,  // Array of allowed origins
