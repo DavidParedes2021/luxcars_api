@@ -50,9 +50,9 @@ const createOffer = async (req, res) => {
     console.log('estoy vivo' + email + message + car);
 
     const newOffer = new Offer({
-      email,
-      message,
-      car, // Car Id
+      email: email,
+      message: message,
+      car: car // Car Id
     });
 
     await newOffer.save();
