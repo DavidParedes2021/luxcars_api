@@ -22,6 +22,7 @@ app.use(cors());
   
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+  app.use('/luxcars', express.static(path.join(__dirname, 'luxcars')));
 
 // Middleware
 app.use(bodyParser.json());

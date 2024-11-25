@@ -1,0 +1,3 @@
+[submodule "luxcars"]
+	path = luxcars
+	url = https://github.com/pauocar/LUXCARS.git
