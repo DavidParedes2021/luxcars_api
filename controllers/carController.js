@@ -133,7 +133,7 @@ const getVendorCars = async (req, res) => {
 
 const getCarOffers = async (req, res) => {
   try {
-    const cars = await Offers.find({ car: req.user.carId });
+    const cars = await Offers.find({ car: req.carId });
     res.json(cars);
   } catch (err) {
     res.status(500).json({ message: 'Server error' });
