@@ -132,7 +132,12 @@ const getVendorCars = async (req, res) => {
 };
 
 const getCarOffers = async (req, res) => {
-  // Implement fetching offers for a specific car here
+  try {
+    const cars = await Offers.find({ car: req.user.carId });
+    res.json(cars);
+  } catch (err) {
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
 module.exports = {
