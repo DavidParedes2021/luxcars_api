@@ -28,7 +28,7 @@ router.post('/offers', createOffer);
 router.post('/vendors/cars', authMiddleware, upload.array('images', 10), addCar);
 //router.post('/vendors/cars', authMiddleware, addCar);
 router.delete('/vendors/cars/:id', authMiddleware, deleteCar);
-router.put('/vendors/cars/:id', authMiddleware, updateCar);
+router.put('/vendors/cars/:id', authMiddleware, upload.array('uploads', 5), updateCar);
 router.get('/vendors/cars', authMiddleware, getVendorCars);
 router.get('/vendors/cars/:id/offers', authMiddleware, getCarOffers);
 

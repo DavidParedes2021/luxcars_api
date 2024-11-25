@@ -115,7 +115,32 @@ const deleteCar = async (req, res) => {
 
 const updateCar = async (req, res) => {
   try {
-    const car = await Car.findByIdAndUpdate(req.params.id, req.body, { new: true });
+
+    const { make, model, year, price, description } = req.body;
+
+    const imagePaths = req.files.map(file => file.path); // Store paths of uploaded images
+    const links = []
+    let idx = 0;
+    for (let i =0; i < 5; i++) {
+      if (req.images[i] !== "<change>")  {
+        links.push(req.images[i]); //Keep o    
+      } else if (idx < imagePaths.length) {
+        links.push(imagePaths[idx++])
+      } else {
+        res.status(400).json({message: "Bad image update"});
+        return;
+      }
+    }
+    const newCar = {
+      make, 
+      model,
+      year,
+      price,
+      description,
+      vendor: req.user.userId, // Vendor ID from authentication
+      images: links // Assign array of image paths to the car
+    }
+    const car = await Car.findByIdAndUpdate(req.params.id, newCar, { new: true });
     res.json(car);
   } catch (err) {
     res.status(500).json({ message: 'Server error' });
