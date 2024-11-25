@@ -143,7 +143,7 @@ const updateCar = async (req, res) => {
     const car = await Car.findByIdAndUpdate(req.params.id, newCar, { new: true });
     res.json(car);
   } catch (err) {
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error', error:err });
   }
 };
 
