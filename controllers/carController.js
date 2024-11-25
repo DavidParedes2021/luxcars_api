@@ -122,8 +122,8 @@ const updateCar = async (req, res) => {
     const links = []
     let idx = 0;
     for (let i =0; i < 5; i++) {
-      if (req.images[i] !== "<change>")  {
-        links.push(req.images[i]); //Keep o    
+      if (req.body.images[i] !== "<change>")  {
+        links.push(req.body.images[i]); //Keep o    
       } else if (idx < imagePaths.length) {
         links.push(imagePaths[idx++])
       } else {
