@@ -136,7 +136,7 @@ const getCarOffers = async (req, res) => {
     const offers = await Offers.find({ car: req.params.id });
     res.json(offers);
   } catch (err) {
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error', error: JSON.stringify(err) });
   }
 };
 
