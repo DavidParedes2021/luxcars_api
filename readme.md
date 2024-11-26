@@ -1,5 +1,7 @@
 # LUXCARS API Documentation
 
+![alt text](https://github.com/DavidParedes2021/luxcars_api/blob/2d2dcc8ad0cc41df3b92a727a91caaaec4097c01/docs/BD.png)
+
 ## Overview
 
 This API provides functionalities for both public users and vendors to interact with a car marketplace. Public users can view cars and make offers, while vendors can manage their car listings and offers.
