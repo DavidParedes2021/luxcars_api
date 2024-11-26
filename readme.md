@@ -1,6 +1,16 @@
 # LUXCARS API Documentation
 
-![alt text](https://github.com/DavidParedes2021/luxcars_api/blob/2d2dcc8ad0cc41df3b92a727a91caaaec4097c01/docs/BD.png)
+## DB
+
+![Database diagram](https://github.com/DavidParedes2021/luxcars_api/blob/2d2dcc8ad0cc41df3b92a727a91caaaec4097c01/docs/BD.png)
+
+## User interaction
+
+![User interaction](https://github.com/DavidParedes2021/luxcars_api/blob/863ba8f78cfc89324bf38d372171085b0405dc42/docs/user_interaction.png)
+
+## API UML
+
+![API UML](https://github.com/DavidParedes2021/luxcars_api/blob/863ba8f78cfc89324bf38d372171085b0405dc42/docs/UML.png)
 
 ## Overview
 
